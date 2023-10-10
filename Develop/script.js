@@ -1,6 +1,6 @@
 //header with current day & time
 var today = dayjs();
-var currentDay = today.format('[Today is] MMM D, YYYY! 🌼'); 
+var currentDay = today.format('[Today is] MMMM D, YYYY!'); 
 // [and the time is] h:mm:ss A.');
 $('#currentDay').text(currentDay);
 
@@ -8,6 +8,7 @@ $('#currentDay').text(currentDay);
 //toDo list is saved into local storage when save btn is clicked
  $(".saveBtn").on("click", function (event) {
   event.preventDefault();
+  
 //get the time and description of the toDO list
   var toDo = {
     time: $(this).parent().attr("id"),
@@ -15,19 +16,14 @@ $('#currentDay').text(currentDay);
   };
 //puts items into a string in local storage
   localStorage.setItem("toDo", JSON.stringify(toDo));
-
-//retrieve items and  parse the items from local storage to console log
-var retrieve = localStorage.getItem("toDo");
-console.log("retrieve: ", (window.JSON.parse(retrieve)));
  })
+//retrieve and parse the items from local storage to console log
 
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
+  var retrieve = localStorage.getItem("toDo");
+console.log("retrieve: ", JSON.parse(retrieve));
+//retrieve and keep items from local storage on page
+var loadedData = localStorage.getItem(".time-block");
+console.log(loadedData);
 
 
 //gets current hour
