@@ -39,9 +39,9 @@ The following animation demonstrates the application functionality:
 
 When a user types an activity and click on the save button, their input will be saved into the local storage so that the user can access their activities they have planned for the day.
 
-Live site: 
+Live site: https://bxiong34.github.io/daily-planner/
 
 ![Alt text](<Assets/Screenshot 2023-10-10 at 5.48.09 PM.png>)
 
 - - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 Bao Xiong. All Rights Reserved.
