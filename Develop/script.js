@@ -16,14 +16,15 @@ $('#currentDay').text(currentDay);
   };
 //puts items into a string in local storage
   localStorage.setItem("toDo", JSON.stringify(toDo));
- })
-//retrieve and parse the items from local storage to console log
 
-  var retrieve = localStorage.getItem("toDo");
+}) 
+//retrieve and parse the items from local storage to console log 
+var retrieve = localStorage.getItem("toDo");
 console.log("retrieve: ", JSON.parse(retrieve));
+
 //retrieve and keep items from local storage on page
-var loadedData = localStorage.getItem(".time-block");
-console.log(loadedData);
+// var loadedData = toDo.val();
+// console.log(loadedData);
 
 
 //gets current hour
@@ -48,5 +49,4 @@ console.log(currentHour);
       $(this).addClass("past");
       $(this).removeClass("future");
     }
- 
   })
