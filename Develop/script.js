@@ -24,26 +24,30 @@ function colorChange () {
   }
 
 //get the time and description of the toDO list
-  var toDo = [];
+  var toDo = JSON.parse(localStorage.getItem("toDo")) || [];
+  //loops through the different arrays and keeps saved items on page
+  for (var i = 0; i < toDo.length; i++) {
+    // console.log(toDo[i]);
+    var timeBlockEl = document.getElementById(toDo[i].time);
+    // console.log(timeBlockEl);
+    // console.log(timeBlockEl.children[1]);
+    timeBlockEl.children[1].value = toDo[i].description;
+  }
+//similar to:
+  // var oldList = JSON.parse(localStorage.getItem("toDo")) || [];
+  // console.log(oldList);
+
+  // if (oldList.length > 0) {
+  //   toDo = oldList;
+  // } else {
+  //   toDo = [];
+  // }
+
   function add (newToDo) {
   toDo.push(newToDo)
   //puts items into a string in local storage
   localStorage.setItem("toDo", JSON.stringify(toDo));
 }
-
-//retrieve and parse the items from local storage to console log 
-var getToDo = localStorage.getItem("toDo");
-console.log("getToDo: ", JSON.parse(getToDo));
-
-//make another function to get and build todos.
-//make sure to handle the case when there are no todos in local storage b/c it will return null
-//(retrieve.description); check jquery for loop
-// function getToDos () {
-//   if (toDo == null) {
-//     return();
-//   }
-// }
-
 
 //toDo list is saved into local storage when save btn is clicked
 $(".saveBtn").on("click", function (event) {
@@ -53,9 +57,24 @@ $(".saveBtn").on("click", function (event) {
     description: $(this).siblings(".description").val(),
   })
 colorChange();
-//call function here
 }) 
 
 colorChange();
-//and call here
+
+
+
+//getting description to stay on 12pm
+//retrieve and parse the items from local storage to console log 
+// var getToDo = localStorage.getItem("toDo");
+// // console.log("getToDo: ", JSON.parse(getToDo));
+// var list = JSON.parse(getToDo)
+// console.log(list);
+// console.log(list[0].description);
+
+// var text = document.getElementById("12PM");
+// console.log(text.children[1]);
+// text.children[1].value = list[0].description
+
+
+
 
