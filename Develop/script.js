@@ -1,7 +1,7 @@
 //header with current day & time
 var today = dayjs();
-var currentDay = today.format('[Today is] MMMM D, YYYY!'); 
-$('#currentDay').text(currentDay);
+var currentDate = today.format('[Today is] MMMM D, YYYY! h:mm A'); 
+$('#currentDate').text(currentDate);
 
 function colorChange () {
   //gets current hour
@@ -27,7 +27,7 @@ function colorChange () {
   var toDo = JSON.parse(localStorage.getItem("toDo")) || [];
   //loops through the different arrays and keeps saved items on page
   for (var i = 0; i < toDo.length; i++) {
-    // console.log(toDo[i]);
+    console.log(toDo[i]);
     var timeBlockEl = document.getElementById(toDo[i].time);
     // console.log(timeBlockEl);
     // console.log(timeBlockEl.children[1]);
@@ -60,21 +60,6 @@ colorChange();
 }) 
 
 colorChange();
-
-
-
-//getting description to stay on 12pm
-//retrieve and parse the items from local storage to console log 
-// var getToDo = localStorage.getItem("toDo");
-// // console.log("getToDo: ", JSON.parse(getToDo));
-// var list = JSON.parse(getToDo)
-// console.log(list);
-// console.log(list[0].description);
-
-// var text = document.getElementById("12PM");
-// console.log(text.children[1]);
-// text.children[1].value = list[0].description
-
 
 
 
